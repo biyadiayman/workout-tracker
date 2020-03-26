@@ -13,12 +13,14 @@
 #include"bodybuilding.h"
 #include"runing.h"
 #include"movement.h"
+#include"weightloss.h"
+#include"characteristic.h"
+#include"buildmuscle.h"
+#include"stressrelief.h"
 
 void testInit(){
 
     User me(1, "Sherlock", QDate(1998, 2, 4), 1);
-    me.workouts.append(Workout());
-
 
     Yoga yo1(1, BodyPart::Arms, 50.0, Position::Catcow, 60.0);
     Yoga yo2(2, BodyPart::Chest, 60.0, Position::DownwardDog, 120.0);
@@ -50,7 +52,22 @@ void testInit(){
     qDebug() << wo1.toJson();
 
     Characteristic c1(1, 184, 80.0, QDate(2020, 1, 10));
-    qDebug() << c1.toJson();
+    Characteristic c2(1, 184, 83.0, QDate(2020, 1, 20));
+
+    WeightLoss wl(1, QDate(2020, 6, 1), "Summer Body", 70.0);
+    BuildMuscle bm(1, QDate(2020, 5, 1), "Greek God Physique", BodyPart::FullBody);
+    StressRelief sr(1, QDate(2020, 12, 1), "Zen Mind", 10.0);
+
+    me.addGoal(wl);
+    me.addGoal(bm);
+    me.addGoal(sr);
+    me.addCharacteristic(c1);
+    me.addCharacteristic(c2);
+    me.addWorkout(wo1);
+
+    qDebug() << me.toJson();
+
+
 
 }
 
