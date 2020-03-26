@@ -22,6 +22,8 @@ void testInit(){
     Walking wlk1(3, BodyPart::FullBody, 80, 9000);
 
     qDebug() << yo1.toJson();
+    qDebug() << static_cast<int>(wlk1.getBodyPart());
+    static_cast<BodyPart>(static_cast<int>(wlk1.getBodyPart()));
 
     Workout wo1(1, QDate(2020,2,20));
     //wo1.setExercises(wo1.getExercises());

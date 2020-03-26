@@ -2,7 +2,7 @@
 #define WALKING_H
 
 #include "exercise.h"
-
+#include <QJsonObject>
 class Walking : public Exercise
 {
 private:
@@ -14,6 +14,7 @@ public:
     Walking(int, BodyPart, float, int);
     int getSteps() const;
     void setSteps(int value);
+    QJsonObject toJson() override;
 };
 
 #endif // WALKING_H

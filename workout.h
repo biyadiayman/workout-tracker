@@ -3,6 +3,7 @@
 
 #include <QDate>
 #include <QJsonObject>
+#include <QJsonArray>
 
 #include "exercise.h"
 

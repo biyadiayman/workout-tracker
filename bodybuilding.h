@@ -3,6 +3,7 @@
 
 #include "exercise.h"
 #include "movement.h"
+#include <QJsonObject>
 
 class Bodybuilding : public Exercise
 {
@@ -11,6 +12,9 @@ private:
     int sets;
 public:
     Bodybuilding();
+    Bodybuilding(int, BodyPart, float, Movement, int);
+    QJsonObject toJson() override;
+
     Movement getMove() const;
     void setMove(const Movement &value);
     int getSets() const;

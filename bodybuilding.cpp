@@ -24,3 +24,20 @@ Bodybuilding::Bodybuilding()
 {
     
 }
+
+Bodybuilding::Bodybuilding(int eid, BodyPart bodyPart, float caloriesBurned, Movement move, int sets)
+    :Exercise(eid, bodyPart, caloriesBurned), move(move), sets(sets)
+{
+
+}
+
+QJsonObject Bodybuilding::toJson(){
+
+    QJsonObject res;
+    res.insert("eid", getEid());
+    res.insert("bodyPart", static_cast<int>(getBodyPart()));
+    res.insert("caloriesBurned", static_cast<double>(getCaloriesBurned()));
+    res.insert("move", static_cast<int>(move));
+    res.insert("sets", sets);
+    return res;
+}

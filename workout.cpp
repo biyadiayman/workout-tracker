@@ -45,10 +45,10 @@ QJsonObject Workout::toJson(){
     res.insert("wid", wid);
     res.insert("date", date.toString("dd.MM.yyyy"));
     res.insert("caloriesBurned", static_cast<double>(caloriesBurned));
-    QJsonArray exos();
-    /*foreach (Exercise x, exercises) {
-        exos.insert(x.toJson());
-    }*/
+    QJsonArray exos;
+    foreach (Exercise x, exercises) {
+        exos.append(x.toJson());
+    }
     res.insert("exercises", exos);
     return res;
 }

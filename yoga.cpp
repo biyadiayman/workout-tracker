@@ -34,9 +34,9 @@ Yoga::Yoga(int eid, BodyPart bodyPart, float caloriesBurned, Position pose, floa
 QJsonObject Yoga::toJson(){
     QJsonObject res;
     res.insert("eid", getEid());
-    //res.insert("bodyPart", QVariant::fromValue(getBodyPart()).toJsonValue());
+    res.insert("bodyPart", static_cast<int>(getBodyPart()));
     res.insert("caloriesBurned", static_cast<double>(getCaloriesBurned()));
-    //res.insert("pose", QVariant::fromValue(pose).toJsonValue());
+    res.insert("pose", static_cast<int>(pose));
     res.insert("duration", static_cast<double>(duration));
     return res;
 }

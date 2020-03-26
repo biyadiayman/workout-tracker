@@ -14,7 +14,7 @@ public:
 
     Yoga();
     Yoga(int, BodyPart, float, Position, float);
-    QJsonObject toJson();
+    QJsonObject toJson() override;
 
     Position getPose() const;
     void setPose(const Position &value);

@@ -2,6 +2,7 @@
 #define EXERCISE_H
 
 #include "bodypart.h"
+#include <QJsonObject>
 
 #include<QDebug>
 
@@ -21,6 +22,7 @@ public:
     void setBodyPart(const BodyPart &value);
     float getCaloriesBurned() const;
     void setCaloriesBurned(float value);
+    virtual QJsonObject toJson();
 };
 
 #endif // EXERCISE_H
