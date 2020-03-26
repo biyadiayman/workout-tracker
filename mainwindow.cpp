@@ -50,6 +50,9 @@ void testInit(){
     qDebug() << wo1.toJson();
 
 
+    qDebug() << yo1.toJson();
+
+
 }
 
 MainWindow::MainWindow(QWidget *parent) :

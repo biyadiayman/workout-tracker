@@ -10,6 +10,7 @@ class Yoga : public Exercise
 private:
     Position pose;
     float duration;
+
 public:
 
     Yoga();

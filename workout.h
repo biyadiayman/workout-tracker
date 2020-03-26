@@ -4,6 +4,7 @@
 #include <QDate>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QDebug>
 
 #include "exercise.h"
 

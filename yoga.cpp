@@ -22,13 +22,13 @@ void Yoga::setDuration(float value)
 
 Yoga::Yoga()
 {
-
+    
 }
 
 Yoga::Yoga(int eid, BodyPart bodyPart, float caloriesBurned, Position pose, float duration)
     :Exercise(eid, bodyPart, caloriesBurned), pose(pose), duration(duration)
 {
-
+    setJo(toJson());
 }
 
 QJsonObject Yoga::toJson(){

@@ -30,9 +30,19 @@ void Exercise::setCaloriesBurned(float value)
     caloriesBurned = value;
 }
 
+QJsonObject Exercise::getJo() const
+{
+    return jo;
+}
+
+void Exercise::setJo(const QJsonObject &value)
+{
+    jo = value;
+}
+
 Exercise::Exercise()
 {
-
+    
 }
 
 Exercise::Exercise(int eid, BodyPart bodyPart, float caloriesBurned):eid(eid), bodyPart(bodyPart), caloriesBurned(caloriesBurned)

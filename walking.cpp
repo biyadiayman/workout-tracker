@@ -18,6 +18,7 @@ Walking::Walking()
 Walking::Walking(int eid, BodyPart bodyPart, float caloriesBurned, int steps)
     :Exercise(eid, bodyPart, caloriesBurned), steps(steps)
 {
+    setJo(toJson());
 
 }
 

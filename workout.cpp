@@ -67,7 +67,7 @@ QJsonObject Workout::toJson(){
     res.insert("caloriesBurned", caloriesBurned);
     QJsonArray exos;
     foreach (Exercise x, exercises) {
-        exos.append(x.toJson());
+        exos.append(x.getJo());
     }
     res.insert("exercises", exos);
     return res;

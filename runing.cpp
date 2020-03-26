@@ -28,11 +28,12 @@ Runing::Runing()
 Runing::Runing(int eid, BodyPart bodyPart, float caloriesBurned, float distance, float duration)
     :Exercise(eid, bodyPart, caloriesBurned), distance(distance), duration(duration)
 {
+    setJo(toJson());
 
 }
 
-QJsonObject Runing::toJson(){
-
+QJsonObject Runing::toJson()
+{
     QJsonObject res;
     res.insert("eid", getEid());
     res.insert("bodyPart", static_cast<int>(getBodyPart()));

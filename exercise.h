@@ -12,6 +12,11 @@ private:
     int eid;
     BodyPart bodyPart;
     float caloriesBurned;
+
+
+    // test zone //
+    QJsonObject jo;
+    //////////////
 public:
 
     Exercise();
@@ -23,6 +28,8 @@ public:
     float getCaloriesBurned() const;
     void setCaloriesBurned(float value);
     virtual QJsonObject toJson();
+    QJsonObject getJo() const;
+    void setJo(const QJsonObject &value);
 };
 
 #endif // EXERCISE_H

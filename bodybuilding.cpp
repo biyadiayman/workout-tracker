@@ -28,7 +28,7 @@ Bodybuilding::Bodybuilding()
 Bodybuilding::Bodybuilding(int eid, BodyPart bodyPart, float caloriesBurned, Movement move, int sets)
     :Exercise(eid, bodyPart, caloriesBurned), move(move), sets(sets)
 {
-
+    setJo(toJson());
 }
 
 QJsonObject Bodybuilding::toJson(){
