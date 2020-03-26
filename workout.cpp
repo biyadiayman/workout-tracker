@@ -32,19 +32,39 @@ void Workout::setExercises(const QVector<Exercise> &value)
 
 Workout::Workout()
 {
-
+    caloriesBurned = 0.0;
 }
 
 Workout::Workout(int wid, QDate date):wid(wid), date(date)
 {
+    caloriesBurned = 0.0;
+}
 
+void Workout::setCaloriesBurned()
+{
+    caloriesBurned = 0.0;
+    foreach (Exercise x, exercises) {
+        caloriesBurned += x.getCaloriesBurned();
+    }
+}
+
+float Workout::getCaloriesBurned()
+{
+    setCaloriesBurned();
+    return caloriesBurned;
+}
+
+void Workout::addExercise(Exercise x)
+{
+    exercises.append(x);
+    setCaloriesBurned();
 }
 
 QJsonObject Workout::toJson(){
     QJsonObject res;
     res.insert("wid", wid);
     res.insert("date", date.toString("dd.MM.yyyy"));
-    res.insert("caloriesBurned", static_cast<double>(caloriesBurned));
+    res.insert("caloriesBurned", caloriesBurned);
     QJsonArray exos;
     foreach (Exercise x, exercises) {
         exos.append(x.toJson());

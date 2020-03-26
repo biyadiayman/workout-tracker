@@ -39,3 +39,8 @@ Exercise::Exercise(int eid, BodyPart bodyPart, float caloriesBurned):eid(eid), b
 {
     qDebug() << "X:" << eid << " ; " << caloriesBurned;
 }
+
+QJsonObject Exercise::toJson()
+{
+    return QJsonObject();
+}

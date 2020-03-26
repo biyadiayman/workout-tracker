@@ -10,6 +10,9 @@
 #include"yoga.h"
 #include"position.h"
 #include"walking.h"
+#include"bodybuilding.h"
+#include"runing.h"
+#include"movement.h"
 
 void testInit(){
 
@@ -17,16 +20,33 @@ void testInit(){
     me.workouts.append(Workout());
 
 
-    Yoga yo1(1, BodyPart::Arms, 50, Position::Catcow, 60);
-    Yoga yo2(2, BodyPart::Chest, 60, Position::DownwardDog, 120);
-    Walking wlk1(3, BodyPart::FullBody, 80, 9000);
+    Yoga yo1(1, BodyPart::Arms, 50.0, Position::Catcow, 60.0);
+    Yoga yo2(2, BodyPart::Chest, 60.0, Position::DownwardDog, 120.0);
+    Walking wlk1(3, BodyPart::FullBody, 80.0, 9000);
+    Runing run1(4, BodyPart::LowerBody, 200.0, 50.0, 70.0);
+    Bodybuilding bld1(5, BodyPart::UpperBody, 60.0, Movement::Pushup, 4);
 
     qDebug() << yo1.toJson();
     qDebug() << static_cast<int>(wlk1.getBodyPart());
-    static_cast<BodyPart>(static_cast<int>(wlk1.getBodyPart()));
+
 
     Workout wo1(1, QDate(2020,2,20));
-    //wo1.setExercises(wo1.getExercises());
+
+    /*QVector<Exercise> exs;
+    exs.append(yo1);
+    exs.append(yo2);
+    exs.append(wlk1);
+    exs.append(run1);
+    exs.append(bld1);
+    exs.append(wo1.getExercises());
+    wo1.setExercises(exs);*/
+
+    wo1.addExercise(yo1);
+    wo1.addExercise(yo2);
+    wo1.addExercise(wlk1);
+    wo1.addExercise(bld1);
+    wo1.addExercise(run1);
+
     qDebug() << wo1.toJson();
 
 

@@ -36,7 +36,7 @@ QJsonObject Bodybuilding::toJson(){
     QJsonObject res;
     res.insert("eid", getEid());
     res.insert("bodyPart", static_cast<int>(getBodyPart()));
-    res.insert("caloriesBurned", static_cast<double>(getCaloriesBurned()));
+    res.insert("caloriesBurned", getCaloriesBurned());
     res.insert("move", static_cast<int>(move));
     res.insert("sets", sets);
     return res;

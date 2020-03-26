@@ -36,8 +36,8 @@ QJsonObject Runing::toJson(){
     QJsonObject res;
     res.insert("eid", getEid());
     res.insert("bodyPart", static_cast<int>(getBodyPart()));
-    res.insert("caloriesBurned", static_cast<double>(getCaloriesBurned()));
-    res.insert("distance", static_cast<double>(distance));
-    res.insert("duration", static_cast<double>(duration));
+    res.insert("caloriesBurned", getCaloriesBurned());
+    res.insert("distance", distance);
+    res.insert("duration", duration);
     return res;
 }

@@ -20,6 +20,7 @@ public:
     Workout(int, QDate);
     void setCaloriesBurned(); // sum of each exercise's calories
     float getCaloriesBurned();
+    void addExercise(Exercise);
     QJsonObject toJson();
 
     int getWid() const;

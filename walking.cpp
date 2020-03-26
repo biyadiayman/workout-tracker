@@ -25,7 +25,7 @@ QJsonObject Walking::toJson(){
     QJsonObject res;
     res.insert("eid", getEid());
     res.insert("bodyPart", static_cast<int>(getBodyPart()));
-    res.insert("caloriesBurned", static_cast<double>(getCaloriesBurned()));
+    res.insert("caloriesBurned", getCaloriesBurned());
     res.insert("steps", steps);
     return res;
 }

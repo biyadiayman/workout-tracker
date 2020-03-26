@@ -35,8 +35,8 @@ QJsonObject Yoga::toJson(){
     QJsonObject res;
     res.insert("eid", getEid());
     res.insert("bodyPart", static_cast<int>(getBodyPart()));
-    res.insert("caloriesBurned", static_cast<double>(getCaloriesBurned()));
+    res.insert("caloriesBurned", getCaloriesBurned());
     res.insert("pose", static_cast<int>(pose));
-    res.insert("duration", static_cast<double>(duration));
+    res.insert("duration", duration);
     return res;
 }
