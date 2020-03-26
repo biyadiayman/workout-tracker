@@ -2,21 +2,30 @@
 #define GOAL_H
 
 #include<QDate>
-#include<string>
+#include<QString>
+#include<QJsonObject>
 
 class Goal
 {
 private:
+    int gid;
     QDate deadline;
-    std::string motivation;
+    QString motivation;
+
+    QJsonObject jo;
 
 public:
     Goal();
-    Goal(QDate, std::string);
+    Goal(int, QDate, QString);
     QDate getDeadline() const;
     void setDeadline(const QDate &value);
-    std::string getMotivation() const;
-    void setMotivation(const std::string &value);
+    virtual QJsonObject toJson();
+    int getGid() const;
+    void setGid(int value);
+    QJsonObject getJo() const;
+    void setJo(const QJsonObject &value);
+    QString getMotivation() const;
+    void setMotivation(const QString &value);
 };
 
 #endif // GOAL_H

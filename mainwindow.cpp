@@ -49,9 +49,8 @@ void testInit(){
 
     qDebug() << wo1.toJson();
 
-
-    qDebug() << yo1.toJson();
-
+    Characteristic c1(1, 184, 80.0, QDate(2020, 1, 10));
+    qDebug() << c1.toJson();
 
 }
 
