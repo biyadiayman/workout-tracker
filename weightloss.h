@@ -3,13 +3,15 @@
 
 #include "goal.h"
 
-class WeightLoss : Goal
+class WeightLoss : public Goal
 {
 private:
     float targetWeight;
 
 public:
     WeightLoss();
+    float getTargetWeight() const;
+    void setTargetWeight(float value);
 };
 
 #endif // WEIGHTLOSS_H

@@ -3,12 +3,17 @@
 
 #include "exercise.h"
 
-class Walking : Exercise
+class Walking : public Exercise
 {
 private:
     int steps;
+
 public:
+
     Walking();
+    Walking(int, BodyPart, float, int);
+    int getSteps() const;
+    void setSteps(int value);
 };
 
 #endif // WALKING_H

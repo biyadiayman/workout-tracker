@@ -4,7 +4,12 @@
 enum class BodyPart{
   Arms,
   Back,
-  Chest
+  Chest,
+  Legs,
+  FullBody,
+  LowerBody,
+  Core,
+  UpperBody
 };
 
 #endif

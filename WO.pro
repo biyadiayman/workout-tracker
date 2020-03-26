@@ -27,6 +27,7 @@ CONFIG += c++11
 SOURCES += \
         bodybuilding.cpp \
         buildmuscle.cpp \
+        characteristic.cpp \
         exercise.cpp \
         goal.cpp \
         main.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
         bodybuilding.h \
         bodypart.h \
         buildmuscle.h \
+        characteristic.h \
         exercise.h \
         goal.h \
         mainwindow.h \
