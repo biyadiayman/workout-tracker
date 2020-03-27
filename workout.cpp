@@ -72,3 +72,7 @@ QJsonObject Workout::toJson(){
     res.insert("exercises", exos);
     return res;
 }
+
+QString Workout::toSting(){
+    return "wid";
+}

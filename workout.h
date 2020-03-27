@@ -8,8 +8,9 @@
 
 #include "exercise.h"
 
-class Workout
+class Workout : public QObject
 {
+    Q_OBJECT
 private:
     int wid;
     QDate date;
@@ -30,6 +31,7 @@ public:
     void setDate(const QDate &value);
     QVector<Exercise> getExercises() const;
     void setExercises(const QVector<Exercise> &value);
+    QString toSting();
 };
 
 #endif // WORKOUT_H

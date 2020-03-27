@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include <QtCore>
+#include <QtGui>
+
 namespace Ui {
 class MainWindow;
 }
@@ -24,6 +27,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QStringListModel *model;
 };
 
 #endif // MAINWINDOW_H

@@ -80,7 +80,7 @@ void testInit(){
     me.addGoal(sr);
     me.addCharacteristic(c1);
     me.addCharacteristic(c2);
-    me.addWorkout(wo1);
+    //me.addWorkout(wo1);
 
     qDebug() << me.toJson();
 
@@ -96,7 +96,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // model
+    model = new QStringListModel();
 
+    // data
+    // QObjectList list;
+    QStringList list;
+
+    list << "test";
+
+    // fill model with data
+
+    model->setStringList(list);
+
+    // tie model and views together
+    ui->listView->setModel(model);
+
+    // determine how edit mode is triggered
+    ui->listView->setEditTriggers(QAbstractItemView::AnyKeyPressed | QAbstractItemView::DoubleClicked);
 
 
     testInit();
