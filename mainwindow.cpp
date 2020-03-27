@@ -108,3 +108,18 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    // add
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    // delete
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    // quit
+}
