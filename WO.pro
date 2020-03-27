@@ -49,6 +49,7 @@ HEADERS += \
         characteristic.h \
         exercise.h \
         goal.h \
+        jsonsave.h \
         mainwindow.h \
         movement.h \
         position.h \

@@ -18,6 +18,23 @@
 #include"buildmuscle.h"
 #include"stressrelief.h"
 
+#include"jsonsave.h"
+
+/*#include<QJsonDocument>
+#include<QFile>
+
+QJsonDocument loadJson(QString fileName) {
+    QFile jsonFile(fileName);
+    jsonFile.open(QFile::ReadOnly);
+    return QJsonDocument().fromJson(jsonFile.readAll());
+}
+
+void saveJson(QJsonDocument document, QString fileName) {
+    QFile jsonFile(fileName);
+    jsonFile.open(QFile::WriteOnly);
+    jsonFile.write(document.toJson());
+}*/
+
 void testInit(){
 
     User me(1, "Sherlock", QDate(1998, 2, 4), 1);
@@ -67,7 +84,9 @@ void testInit(){
 
     qDebug() << me.toJson();
 
-
+    saveJson(QJsonDocument(me.toJson()), "user.json");
+    //qDebug() << "LOAD||||" << loadJson("user.json").object()["name"].toString();
+    qDebug() << "LOAD||||" << jsonToUser(loadJson("user.json")).toJson();
 
 }
 
