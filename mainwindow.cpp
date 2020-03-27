@@ -87,6 +87,7 @@ void testInit(){
     saveJson(QJsonDocument(me.toJson()), "user.json");
     //qDebug() << "LOAD||||" << loadJson("user.json").object()["name"].toString();
     qDebug() << "LOAD||||" << jsonToUser(loadJson("user.json")).toJson();
+    //qDebug() << "MAGISCH | " << loadJson("user.json").object()["workouts"].toArray()[0].toObject()["exercises"].toArray()[2].toObject()["pose"];
 
 }
 
